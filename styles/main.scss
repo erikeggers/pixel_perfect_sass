@@ -573,10 +573,10 @@ footer {
   word-spacing: 1.4px;
   font-weight: 300px;
 
-  a:visited {
+  &:visited {
     color: $secondary-accent-color;
   }
-  a:hover {
+  &:hover {
     color: $secondary-accent-color;
   }
 }
