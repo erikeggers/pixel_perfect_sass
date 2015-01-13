@@ -102,6 +102,11 @@ header p, header li {
   margin: auto 8px;
   padding-bottom: 63px;
 }
+#content::after {
+  content: '';
+  display: block;
+  clear: both;
+}
 #post {
   display: block;
   max-width: 618px;

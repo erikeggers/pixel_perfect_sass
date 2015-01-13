@@ -1,3 +1,6 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 /*
   Colors
 */
@@ -16,10 +19,6 @@ $secondary-accent-color: $gull-gray;
 */
 $body-font: 'Open Sans', sans-serif;
 $heading-font: 'Oswald', sans-serif;
-
-*, *::before, *::after {
-  box-sizing: border-box;
-}
 /*
   Mixins
 */
@@ -55,10 +54,15 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 /*
+  Layout
+*/
+$header-height: 522px;
+$post-height: 618px;
+/*
   Header
 */
 header {
-  height: 523px;
+  height: $header-height;
   background: linear-gradient(rgba(17, 117, 192, 0.85), rgba(17, 117, 192, 0.85)), url("../imgs/headerbackground.jpg");
   background-size: cover;
   background-position: center center;
@@ -85,11 +89,6 @@ header p, header li {
 }
 #logo {
   padding-left: 37px;
-}
-#name {
-  display: inline-block;
-  vertical-align: middle;
-  margin-top: -2px;
 }
 #name {
   display: inline-block;
@@ -390,15 +389,7 @@ header p, header li {
   letter-spacing: 0.4px;
   font-weight: 200;
 }
-#socialLinksSidebar a {
-  text-decoration: none;
-  color: $secondary-accent-color;
-}
-#socialLinksSidebar a:hover {
-  text-decoration: none;
-  color: $secondary-accent-color;
-}
-#socialLinksSidebar a:visited {
+#socialLinksSidebar a, #socialLinksSidebar a:hover, #socialLinksSidebar a:visited {
   text-decoration: none;
   color: $secondary-accent-color;
 }
@@ -422,15 +413,16 @@ header p, header li {
 #underlineAd {
   text-decoration: none;
   position: relative;
-}
-#underlineAd::after {
-  content: '';
-  width: 100%;
-  position: absolute;
-  left: 0;
-  bottom: 1px;
-  border-width: 0 0 1px;
-  border-style: solid;
+
+  &::after {
+    content: '';
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    border-width: 0 0 1px;
+    border-style: solid;
+  }
 }
 #sideBar h4 {
   margin-top: 59px;
@@ -560,21 +552,19 @@ footer {
   bottom: 10px;
   font-weight: 300px;
 }
+#footerNav, #footerLogo, #footerLogo img, #footerLogo p, #footerNav li {
+  display: inline-block;
+}
 #footerNavBar {
   max-width: 1100px;
 }
 #footerNav {
-  display: inline-block;
   position: absolute;
   right: -36px;
   top: 20px;
 }
 #footerLogo {
-  display: inline-block;
   margin-left: 150px;
-}
-#footerLogo img, #footerLogo p, #footerNav li {
-  display: inline-block;
 }
 #footerNav a {
   text-decoration: none;
@@ -590,8 +580,3 @@ footer {
     color: $secondary-accent-color;
   }
 }
-
-// }
-// #footerNav a:hover {
-//   color: $secondary-accent-color;
-// }
